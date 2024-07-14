@@ -6,6 +6,7 @@
 #include "arrays/arrays.h"
 #include "algorithm/sort/bubbleSort.h"
 #include "algorithm/sort/selectionSort.h"
+#include "algorithm/sort/insertionSort.h"
 
 int debugSort(int values[], int arraySize)
 {
@@ -16,7 +17,7 @@ int debugSort(int values[], int arraySize)
         printf("%d | ", values[index]);
         counter++;
     }
-    printf("Total Elemebts: %d\n", counter);
+    printf("Total Elements: %d\n", counter);
 }
 
 int main()
@@ -24,7 +25,7 @@ int main()
     int zeroValues[] = {};
     int values[] = {9, 5, 1, 2, 6, 48, 56, 123, 1, 84, 16, 51, 321, 0, 651, 63, 165, 4, 68};
     Printer.printNumber(Arrays.totalIntegers(sizeof(values)));
-    SelectionSort.selectionSort(values, sizeof(values));
+    InsertionSort.insertionSort(values, sizeof(values));
     debugSort(values, sizeof(values));
     Console.pause();
     return 0;
