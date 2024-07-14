@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "console.h": "c"
+        "console.h": "c",
+        "singlylinkedlist.h": "c",
+        "stack.h": "c"
     }
 }
