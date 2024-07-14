@@ -7,6 +7,7 @@
 #include "algorithm/sort/bubbleSort.h"
 #include "algorithm/sort/selectionSort.h"
 #include "algorithm/sort/insertionSort.h"
+#include "algorithm/sort/quickSort.h"
 
 int debugSort(int values[], int arraySize)
 {
@@ -23,9 +24,9 @@ int debugSort(int values[], int arraySize)
 int main()
 {
     int zeroValues[] = {};
-    int values[] = {9, 5, 1, 2, 6, 48, 56, 123, 1, 84, 16, 51, 321, 0, 651, 63, 165, 4, 68};
+    int values[] = {2, 6, 5, 3, 8, 7, 1, 0, 10, 41, 6};
     Printer.printNumber(Arrays.totalIntegers(sizeof(values)));
-    InsertionSort.insertionSort(values, sizeof(values));
+    QuickSort.quickSort(values, sizeof(values));
     debugSort(values, sizeof(values));
     Console.pause();
     return 0;
