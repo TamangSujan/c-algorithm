@@ -3,6 +3,7 @@
         "console.h": "c",
         "singlylinkedlist.h": "c",
         "stack.h": "c",
-        "arrays.h": "c"
+        "arrays.h": "c",
+        "person.h": "c"
     }
 }
