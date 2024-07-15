@@ -4,6 +4,9 @@
         "singlylinkedlist.h": "c",
         "stack.h": "c",
         "arrays.h": "c",
-        "person.h": "c"
+        "person.h": "c",
+        "array": "c",
+        "initializer_list": "c",
+        "utility": "c"
     }
 }
