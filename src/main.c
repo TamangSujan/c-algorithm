@@ -8,6 +8,7 @@
 #include "algorithm/sort/selectionSort.h"
 #include "algorithm/sort/insertionSort.h"
 #include "algorithm/sort/quickSort.h"
+#include "algorithm/sort/mergeSort.h"
 
 int debugSort(int values[], int arraySize)
 {
@@ -24,9 +25,9 @@ int debugSort(int values[], int arraySize)
 int main()
 {
     int zeroValues[] = {};
-    int values[] = {2, 6, 5, 3, 8, 7, 1, 0, 10, 41, 6};
+    int values[] = {9, 8, 7, 6, 5, 4, 3, 2, 1};
     Printer.printNumber(Arrays.totalIntegers(sizeof(values)));
-    QuickSort.quickSort(values, sizeof(values));
+    MergeSort.mergeSort(values, sizeof(values));
     debugSort(values, sizeof(values));
     Console.pause();
     return 0;
