@@ -96,10 +96,10 @@ void insertSinglyItemAt(SinglyLinkedList *list, int value, int position)
 
 void removeSinglyItem(SinglyLinkedList *list)
 {
-    if (list->size == 1)
+    if (list->size <= 1)
     {
         free(list->head);
-        list->head == NULL;
+        list->head = NULL;
         list->size = 0;
     }
     else if (list->size > 1)
@@ -121,6 +121,13 @@ void removeSinglyItemAt(SinglyLinkedList *list, int position)
     if (position >= list->size)
     {
         removeSinglyItem(list);
+    }
+    else if (position == 1 && list->size > 0)
+    {
+        SinglyNode *head = list->head;
+        list->head = head->next;
+        free(head);
+        list->size--;
     }
     else
     {

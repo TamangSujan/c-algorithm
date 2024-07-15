@@ -10,6 +10,7 @@
 #include "algorithm/sort/quickSort.h"
 #include "algorithm/sort/mergeSort.h"
 #include "algorithm/sort/countingSort.h"
+#include "algorithm/sort/radixSort.h"
 
 int debugSort(int values[], int arraySize)
 {
@@ -26,9 +27,9 @@ int debugSort(int values[], int arraySize)
 int main()
 {
     int zeroValues[] = {};
-    int values[] = {1, 1, 4, 4, 3, 3, 0, 9, 8, 7, 9, 8, 7, 4, 5, 3, 1, 6, 4, 7, 8, 9};
+    int values[] = {178, 571, 457, 584, 123, 273, 319, 478, 251, 270};
     Printer.printNumber(Arrays.totalIntegers(sizeof(values)));
-    CountingSort.countingSort(values, sizeof(values));
+    RadixSort.radixSort(values, sizeof(values));
     debugSort(values, sizeof(values));
     Console.pause();
     return 0;
