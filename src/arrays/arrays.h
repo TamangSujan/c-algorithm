@@ -1,5 +1,6 @@
 #ifndef ARRAYS_H
 #define ARRAYS_H
+#include "stdio.h"
 
 typedef struct ArraysStruct
 {
@@ -7,6 +8,7 @@ typedef struct ArraysStruct
     int (*getMinimumInteger)(int array[], int arraySize);
     int (*getMaximumInteger)(int array[], int arraySize);
     void (*initializeArray)(int array[], int value, int size);
+    void (*printArray)(int array[], int arraySize);
 } ArraysStruct;
 
 int totalIntegers(int arraySize)
@@ -53,11 +55,23 @@ void initializeArray(int array[], int value, int arraySize)
     }
 }
 
+void printArray(int array[], int arraySize)
+{
+    int total = totalIntegers(arraySize);
+    for (int index = 0; index < total; index++)
+    {
+        printf("%d | ", array[index]);
+    }
+    printf("\n");
+}
+
 ArraysStruct Arrays = {
     .totalIntegers = totalIntegers,
     .getMinimumInteger = getMinimumInteger,
     .getMaximumInteger = getMaximunInteger,
-    .initializeArray = initializeArray};
+    .initializeArray = initializeArray,
+    .printArray = printArray,
+};
 
 extern ArraysStruct Arrays;
 

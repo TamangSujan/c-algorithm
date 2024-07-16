@@ -12,11 +12,14 @@
 #include "algorithm/sort/countingSort.h"
 #include "algorithm/sort/radixSort.h"
 #include "algorithm/search/linearSearch.h"
+#include "algorithm/search/binarySearch.h"
 
 int main()
 {
     int values[] = {178, 571, 457, 584, 123, 273, 319, 478, 251, 270};
-    int position = LinearSearch.linearSearch(values, 584, sizeof(values));
+    MergeSort.mergeSort(values, sizeof(values));
+    Arrays.printArray(values, sizeof(values));
+    int position = BinarySearch.binarySearch(values, 319, sizeof(values));
     Printer.printNumber(position);
     Console.pause();
     return 0;
