@@ -13,14 +13,29 @@
 #include "algorithm/sort/radixSort.h"
 #include "algorithm/search/linearSearch.h"
 #include "algorithm/search/binarySearch.h"
+#include "algorithm/queue/queue.h"
 
 int main()
 {
-    int values[] = {178, 571, 457, 584, 123, 273, 319, 478, 251, 270};
-    MergeSort.mergeSort(values, sizeof(values));
-    Arrays.printArray(values, sizeof(values));
-    int position = BinarySearch.binarySearch(values, 319, sizeof(values));
-    Printer.printNumber(position);
+    Queue *queue = QueueHandler.newQueue();
+    QueueHandler.enqueue(queue, 3);
+    QueueHandler.enqueue(queue, 1);
+    QueueHandler.enqueue(queue, 4);
+    QueueHandler.enqueue(queue, 2);
+    QueueHandler.enqueue(queue, 5);
+
+    Printer.printNumber(QueueHandler.peekQueue(queue));
+    QueueHandler.dequeue(queue);
+    Printer.printNumber(QueueHandler.peekQueue(queue));
+    QueueHandler.dequeue(queue);
+    Printer.printNumber(QueueHandler.peekQueue(queue));
+    QueueHandler.dequeue(queue);
+    Printer.printNumber(QueueHandler.peekQueue(queue));
+    QueueHandler.dequeue(queue);
+    Printer.printNumber(QueueHandler.peekQueue(queue));
+    QueueHandler.dequeue(queue);
+
+    QueueHandler.deleteQueue(queue);
     Console.pause();
     return 0;
 }
