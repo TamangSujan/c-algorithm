@@ -11,26 +11,13 @@
 #include "algorithm/sort/mergeSort.h"
 #include "algorithm/sort/countingSort.h"
 #include "algorithm/sort/radixSort.h"
-
-int debugSort(int values[], int arraySize)
-{
-    int counter = 0;
-    int arrayLength = Arrays.totalIntegers(arraySize);
-    for (int index = 0; index < arrayLength; index++)
-    {
-        printf("%d | ", values[index]);
-        counter++;
-    }
-    printf("Total Elements: %d\n", counter);
-}
+#include "algorithm/search/linearSearch.h"
 
 int main()
 {
-    int zeroValues[] = {};
     int values[] = {178, 571, 457, 584, 123, 273, 319, 478, 251, 270};
-    Printer.printNumber(Arrays.totalIntegers(sizeof(values)));
-    RadixSort.radixSort(values, sizeof(values));
-    debugSort(values, sizeof(values));
+    int position = LinearSearch.linearSearch(values, 584, sizeof(values));
+    Printer.printNumber(position);
     Console.pause();
     return 0;
 }
