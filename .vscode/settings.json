@@ -9,6 +9,7 @@
         "initializer_list": "c",
         "utility": "c",
         "queue.h": "c",
-        "binarysearch.h": "c"
+        "binarysearch.h": "c",
+        "countingsort.h": "c"
     }
 }

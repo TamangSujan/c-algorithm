@@ -14,28 +14,24 @@
 #include "algorithm/search/linearSearch.h"
 #include "algorithm/search/binarySearch.h"
 #include "algorithm/queue/queue.h"
+#include "algorithm/hash/hashSet.h"
 
 int main()
 {
-    Queue *queue = QueueHandler.newQueue();
-    QueueHandler.enqueue(queue, 3);
-    QueueHandler.enqueue(queue, 1);
-    QueueHandler.enqueue(queue, 4);
-    QueueHandler.enqueue(queue, 2);
-    QueueHandler.enqueue(queue, 5);
+    HashSet *set = HashSetHandler.newHashSet(10);
+    HashSetHandler.addValueOnHashSet(set, 0);
+    HashSetHandler.addValueOnHashSet(set, 1);
+    HashSetHandler.addValueOnHashSet(set, 2);
+    HashSetHandler.addValueOnHashSet(set, 4);
+    HashSetHandler.addValueOnHashSet(set, 5);
+    HashSetHandler.addValueOnHashSet(set, 7);
+    HashSetHandler.addValueOnHashSet(set, 9);
+    HashSetHandler.addValueOnHashSet(set, 12);
 
-    Printer.printNumber(QueueHandler.peekQueue(queue));
-    QueueHandler.dequeue(queue);
-    Printer.printNumber(QueueHandler.peekQueue(queue));
-    QueueHandler.dequeue(queue);
-    Printer.printNumber(QueueHandler.peekQueue(queue));
-    QueueHandler.dequeue(queue);
-    Printer.printNumber(QueueHandler.peekQueue(queue));
-    QueueHandler.dequeue(queue);
-    Printer.printNumber(QueueHandler.peekQueue(queue));
-    QueueHandler.dequeue(queue);
+    Printer.printNumber(HashSetHandler.getValueFromHashSet(set, 12));
+    Printer.printNumber(HashSetHandler.getValueFromHashSet(set, 3));
 
-    QueueHandler.deleteQueue(queue);
+    HashSetHandler.deleteHashSet(set);
     Console.pause();
     return 0;
 }

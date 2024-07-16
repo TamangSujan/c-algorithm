@@ -148,7 +148,7 @@ bool containsSinglyItem(SinglyLinkedList *list, int value)
     if (list->size > 0)
     {
         SinglyNode *head = list->head;
-        while (head->next != NULL)
+        while (head != NULL)
         {
             if (head->value == value)
                 return 1;
