@@ -19,12 +19,6 @@ void radixSort(int values[], int arraySize)
 
     int loopTimes = DecimalNumberUtility.getRightDigitPosition(maxValue);
 
-    for (int index = 0; index < totalIntegers; index++)
-    {
-        printf("%d | ", values[index]);
-    }
-    printf("\n");
-
     SinglyLinkedList *buckets[10];
 
     for (int index = 0; index < 10; index++)
@@ -37,29 +31,19 @@ void radixSort(int values[], int arraySize)
         for (int arrayIndex = 0; arrayIndex < totalIntegers; arrayIndex++)
         {
             int bucketPosition = DecimalNumberUtility.getDigitValueFromPosition(values[arrayIndex], position);
-            printf("Bucket Insert Index: %d, Value: %d\n", bucketPosition, values[arrayIndex]);
             SinglyLinkedListHandler.insertSinglyItem(buckets[bucketPosition], values[arrayIndex]);
         }
 
         int arrayIndex = 0;
         for (int index = 0; index < 10; index++)
         {
-            printf("Bucket Index: %d\n", index);
             while (SinglyLinkedListHandler.isSinglyLinkedListEmpty(buckets[index]) != 1)
             {
                 int nextValue = SinglyLinkedListHandler.peekSinglyItemAt(buckets[index], 0);
-                printf("Bucket Value: %d\n", nextValue);
                 values[arrayIndex++] = nextValue;
                 SinglyLinkedListHandler.removeSinglyItemAt(buckets[index], 1);
             }
         }
-
-        printf("Position: %d\n", position);
-        for (int index = 0; index < totalIntegers; index++)
-        {
-            printf("%d | ", values[index]);
-        }
-        printf("\n");
     }
 
     for (int index = 0; index < 10; index++)

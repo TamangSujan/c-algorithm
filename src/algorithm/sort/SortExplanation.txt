@@ -1,0 +1,106 @@
+Bubble Sort
+It swaps current element to next element if current element is bigger than next element.
+The current position is then incremented by one.
+
+It loops until all values are sorted.
+for (int loop = 0; loop < arrayLength - 1; loop++)
+    {
+        for (int index = 0; index < arrayLength - loop; index++)
+
+-----------------------------------------------------------------------------------------
+
+Selection Sort
+It swaps current element to next element if next element is smaller than current element.
+Unlike bubble sort which current postion increase by one; after swap the current position remains same in selection sort
+
+
+It loops until all values are sorted.
+for (int loop = 0; loop < arrayLength - 1; loop++)
+    {
+        for (int index = loop; index < arrayLength - 1; index++)
+
+------------------------------------------------------------------------------------------
+
+Insertion Sort
+It swaps current element to previous element until previous element is smaller than current element.
+Best Example: Sorting Card
+
+for (int loop = 1; loop < arrayLength; loop++)
+{
+    int checkIndex = loop;
+    while ((values[checkIndex] < values[checkIndex - 1]) && checkIndex > 0)
+    {
+
+------------------------------------------------------------------------------------------
+
+Quick Sort
+It sorts using divide and pivot rule where pivot element is kept reference to rest element.
+All the element which are lesser than pivot are kept to the left and greater and kept to right.
+
+The first element becomes pivot. Loops starts with two check points:
+First check point keeps incrementing while second check point only increase if swap is needed.
+
+Check points are initialized with pivot position  + 1.
+
+If first checkpoint is smaller than second check point, the swap operation happens.
+
+Finally pivot and second check point is swapped as second check point value is always smaller or equal with pivot.
+
+Second checkpoint is returned as next pivot element for upper recursion.
+
+It divided until higher index of array is greater than lower index of array.
+-------------------------------------------------------------------------------------------
+
+Merge Sort
+It sorts using divide and conquer algorithm. It divides until higher index is greather than lower index.
+Temporary array is initialized to arrage sorted value.
+
+Left check is initialized with lower index
+Right check is initialized with middle index + 1
+
+it loops until left check is smaller or equal to middle index
+and right check is smaller or equal to higher index
+
+if left element is greater than or equal to right element then right element is inserted in temporary array and right index is increased
+if left element is smaller than or equal to right element then left element is inserted in temporary array and left index is increased
+
+if left is smaller than or equal to middle index
+    all element of left are inserted into temporary array
+
+This section makes O(nlogn)
+
+if right is smaller than or equal to higher index
+    all element of right are inserted into temporary array
+
+This section makes O(nlogn)
+
+original array values from lower to higher index are replaced with temporary array values
+----------------------------------------------------------------------------------------
+
+Counting Sort
+There is need of temporary array like merge sort. Array size is defined by range of high and low value.
+
+All Array values are initialized as zero.
+
+The value is calculated to increment in exact position of temporary array.
+
+Starting from temporary array, those values are replaced in orginal array.
+-----------------------------------------------------------------------------------------
+
+Radix Sort
+It is the type of sort which is done by checking digit position from left to right.
+Example: 235, 124
+
+First 5 and 4 are checked and sorted which is the first left position.
+Then 3 and 2 are check and sorted which is second left position.
+Then finally 2 and 1 are sorted which is in third left position.
+
+It required ten linked list (buckets) as there are ten digits from 0 to 1.
+On each list, we calculate the position value are keep that value in proper bucket.
+
+After starting from 0 bucket we replace into original array.
+
+We peek the first element and remove it as it is no longer required and bucket need to be clear for next position.
+
+-------------------------------------------------------------------------------------------
+
