@@ -10,6 +10,7 @@
         "utility": "c",
         "queue.h": "c",
         "binarysearch.h": "c",
-        "countingsort.h": "c"
+        "countingsort.h": "c",
+        "hashmap.h": "c"
     }
 }

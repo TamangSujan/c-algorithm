@@ -15,23 +15,25 @@
 #include "algorithm/search/binarySearch.h"
 #include "algorithm/queue/queue.h"
 #include "algorithm/hash/hashSet.h"
+#include "algorithm/hash/hashMap.h"
 
 int main()
 {
-    HashSet *set = HashSetHandler.newHashSet(10);
-    HashSetHandler.addValueOnHashSet(set, 0);
-    HashSetHandler.addValueOnHashSet(set, 1);
-    HashSetHandler.addValueOnHashSet(set, 2);
-    HashSetHandler.addValueOnHashSet(set, 4);
-    HashSetHandler.addValueOnHashSet(set, 5);
-    HashSetHandler.addValueOnHashSet(set, 7);
-    HashSetHandler.addValueOnHashSet(set, 9);
-    HashSetHandler.addValueOnHashSet(set, 12);
+    HashMap *map = HashMapHandler.newHashMap(10);
+    HashMapHandler.addValueOnHashMap(map, 0, 123);
+    HashMapHandler.addValueOnHashMap(map, 1, 123);
+    HashMapHandler.addValueOnHashMap(map, 2, 234);
+    HashMapHandler.addValueOnHashMap(map, 4, 234);
+    HashMapHandler.addValueOnHashMap(map, 5, 456);
 
-    Printer.printNumber(HashSetHandler.getValueFromHashSet(set, 12));
-    Printer.printNumber(HashSetHandler.getValueFromHashSet(set, 3));
+    Printer.printNumber(HashMapHandler.getValueFromHashMap(map, 0));
+    Printer.printNumber(HashMapHandler.getValueFromHashMap(map, 1));
+    Printer.printNumber(HashMapHandler.getValueFromHashMap(map, 2));
+    Printer.printNumber(HashMapHandler.getValueFromHashMap(map, 3));
+    Printer.printNumber(HashMapHandler.getValueFromHashMap(map, 4));
+    Printer.printNumber(HashMapHandler.getValueFromHashMap(map, 5));
 
-    HashSetHandler.deleteHashSet(set);
+    HashMapHandler.deleteHashMap(map);
     Console.pause();
     return 0;
 }
