@@ -17,34 +17,28 @@
 #include "algorithm/hash/hashSet.h"
 #include "algorithm/hash/hashMap.h"
 #include "algorithm/list/linkedList.h"
+#include "algorithm/tree/binaryTree.h"
 
 int main()
 {
-    LinkedList *list = LinkedListHandler.newLinkedList();
-    LinkedListHandler.removeFirstLinkedNode(list);
-    LinkedListHandler.removeLastLinkedNode(list);
-    LinkedListHandler.removeLinkedNodeAt(list, 10);
-
-    LinkedListHandler.insertLinkedNodeAtLast(list, 4);
-    LinkedListHandler.insertLinkedNodeAtFirst(list, 1);
-    LinkedListHandler.insertLinkedNodeAt(list, 2, 1);
-    LinkedListHandler.insertLinkedNodeAt(list, 3, 2);
-
-    LinkedListHandler.insertLinkedNodeAt(list, 0, 0);
-    LinkedListHandler.insertLinkedNodeAt(list, 10, 3);
-    LinkedListHandler.insertLinkedNodeAt(list, 15, 1);
-
-    LinkedListHandler.removeFirstLinkedNode(list);
-    LinkedListHandler.removeLastLinkedNode(list);
-    LinkedListHandler.removeLinkedNodeAt(list, 2);
-
-    LinkedListHandler.printLinkedList(list);
-
-    Printer.printNumber(LinkedListHandler.containsValue(list, 15));
-    Printer.printNumber(LinkedListHandler.containsValue(list, 8));
-
-    LinkedListHandler.debugLinkedList(list);
-    LinkedListHandler.deleteLinkedList(list);
+    BinaryTree *binaryTree = BinaryTreeHandler.newBinaryTree();
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 10);
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 5);
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 15);
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 10);
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 5);
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 15);
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 6);
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 7);
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 8);
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 16);
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 11);
+    BinaryTreeHandler.insertValueInBinaryTree(binaryTree, 18);
+    BinaryTreeHandler.traverseBinaryTree(binaryTree);
+    printf("\n");
+    Printer.printNumber(BinaryTreeHandler.searchBinaryTree(binaryTree, 20));
+    Printer.printNumber(BinaryTreeHandler.searchBinaryTree(binaryTree, 8));
+    BinaryTreeHandler.deleteBinaryTree(binaryTree);
     Console.pause();
     return 0;
 }
